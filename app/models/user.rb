@@ -5,8 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :books, dependent: :destroy
+<<<<<<< HEAD
   has_many :favorites, dependent: :destroy
   has_many :book_comments, dependent: :destroy
+=======
+>>>>>>> origin/master
   attachment :profile_image
 
   validates :name, presence: true
@@ -14,6 +17,7 @@ class User < ApplicationRecord
   validates :name, length:{minimum:2}
   validates :introduction, length:{maximum:50}
 
+<<<<<<< HEAD
   has_many :relationships, foreign_key: 'user_id'
   has_many :followings, through: :relationships, source: :follow
   has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
@@ -49,4 +53,7 @@ class User < ApplicationRecord
       @user = User.all
     end
   end
+=======
+
+>>>>>>> origin/master
 end

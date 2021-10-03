@@ -4,6 +4,7 @@ class Book < ApplicationRecord
 	validates :body, length:{maximum:200}
     validates :body, presence: true
     validates :title, presence: true
+<<<<<<< HEAD
 
     has_many :favorites, dependent: :destroy
     has_many :book_comments, dependent: :destroy
@@ -27,4 +28,6 @@ class Book < ApplicationRecord
             @book = Book.all
         end
     end
+=======
+>>>>>>> origin/master
 end

@@ -20,7 +20,10 @@
         <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
 
           <% if user_signed_in? %>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
           <li>
             <%= link_to "Home",user_path(current_user.id),class:"glyphicon glyphicon-home home" %>
           </li>
@@ -34,6 +37,7 @@
             <%= link_to "logout", destroy_user_session_path,class:"glyphicon glyphicon-share", method: :delete %>
           </li>
 
+<<<<<<< HEAD
           <%= form_tag(search_path,:method => 'get') do %>
            <%= text_field_tag 'kensaku[content]' %>
            <%= select_tag 'kensaku[model]', options_for_select([['User','user'],['Book','book']]) %>
@@ -41,6 +45,8 @@
            <%= submit_tag 'Search', :name => nil %>
           <% end %>
 
+=======
+>>>>>>> origin/master
           <% else %>
 
           <li>
@@ -72,7 +78,11 @@
 <% end %>
 
 
+<<<<<<< HEAD
 <%= yield %>
+=======
+  <%= yield %>
+>>>>>>> origin/master
 
 <footer>
   <div class='container'>

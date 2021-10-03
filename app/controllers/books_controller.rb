@@ -22,9 +22,13 @@ before_action :correct_user, only:[:edit, :update]
 	def show
 		@hon = Book.new
 		@book = Book.find(params[:id])
+<<<<<<< HEAD
 		@user = @book.user
 		@book_comment = BookComment.new
 		@book_comments = BookComment.all
+=======
+		@user = current_user
+>>>>>>> origin/master
 	end
 
 	def update

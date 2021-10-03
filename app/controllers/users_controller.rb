@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 class UsersController < ApplicationController
 
 before_action :authenticate_user!

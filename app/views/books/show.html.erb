@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+     <%= render 'users/profile', user:@user %>
+     <%= render 'newbook',book:@book %>
+
+    <div class="col-xs-9">
+     <h2>Book detail</h2>
+      <%= render 'detail', book:@book %>
+
+     <%=form_for [@book, @book_comment] do |f| %>
+      <%=f.text_area :comment %>
+      <%=f.submit "送信する" %>
+     <% end %>
+
+     <h4>コメント一覧</h4>
+      コメント数：<%= @book.book_comments.count %>
+
+      <% @book.book_comments.each do |book_comment| %>
+       <%= book_comment.comment %>
+
+       <% if book_comment.user ==  current_user %>
+        <%= link_to "削除", book_book_comment_path(@book.id,book_comment.id),method: :delete %>
+       <% end %>
+
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>

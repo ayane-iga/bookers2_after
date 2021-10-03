@@ -1,0 +1,29 @@
+      <h2>New book</h2>
+         <%= form_for(@hon) do |f| %>
+            <% if @hon.errors.any? %>
+              <div id="error_explanation" class="alert alert-danger">
+              <p><%= @hon.errors.count %>error prohibited this book from being saved:</p>
+              <ul>
+              <% @hon.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+              </ul>
+              </div>
+            <% end %>
+
+      <div class="field row">
+      <label for="book_opinion">Title</label>
+      <%= f.text_field :title, class:"col-xs-12" %>
+    </div>
+
+      <div class="field row">
+      <label for="book_opinion">Opinion</label>
+      <%= f.text_area :body, class:"col-xs-12" %>
+    </div>
+
+<br/>
+      <div class="actions row">
+      <%= f.submit('Create Book',class:"btn btn-primary col-xs-12") %>
+      </div>
+      <% end %>
+    </div>
